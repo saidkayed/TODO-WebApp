@@ -1,0 +1,10 @@
+Dao\exceptions\PreexistingEntityException.class
+Dao\exceptions\IllegalOrphanException.class
+Dao\exceptions\NonexistentEntityException.class
+Api\ApplicationConfig.class
+Cors\NewCrossOriginResourceSharingFilter.class
+Model\teach.class
+Entity\Todo.class
+Entity\Todo_.class
+Api\GenericResource.class
+Dao\TodoFacade.class
