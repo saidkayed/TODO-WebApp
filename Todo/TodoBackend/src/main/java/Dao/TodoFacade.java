@@ -156,10 +156,10 @@ public class TodoFacade implements Serializable {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
         TodoFacade tf = new TodoFacade(emf);
           
-        long millis=System.currentTimeMillis();  
+      /*  long millis=System.currentTimeMillis();  
         java.sql.Date date=new java.sql.Date(millis);  
-        
-        Todo t = new Todo("Lean", "learn Py", date);
+        */
+        Todo t = new Todo("Lean", "learn Py", "2020-10-4");
         tf.create(t);
         System.out.println(tf.getAllTodo());
         

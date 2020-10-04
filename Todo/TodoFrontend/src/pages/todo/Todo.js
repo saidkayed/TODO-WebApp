@@ -7,8 +7,9 @@ class Todo extends Component {
         super();
 
         this.state = {
-            title: "q",
-            bio: "a",
+            title: "",
+            bio: "",
+            date: "",
             data: [],
             isEdit: false,
             todo_id:""
@@ -54,11 +55,11 @@ class Todo extends Component {
     handleClick = async () => {
         if (this.state.isEdit === false) {
             console.log("i was clicked")
-            await postTODO(this.state.title, this.state.bio).then((res) => {
+            await postTODO(this.state.title, this.state.bio, this.state.date).then((res) => {
                 console.log(res);
             })
         } else {
-            await editTODO(this.state.todo_id, this.state.title, this.state.bio)
+            await editTODO(this.state.todo_id, this.state.title, this.state.bio, this.state.date)
             this.setState({isEdit: false})
         }
 
@@ -68,6 +69,11 @@ class Todo extends Component {
     changeTitle = (event) => {
         this.setState({ title: event.target.value })
         console.log(this.state.title)
+    }
+
+    changeDate = (event) => {
+        this.setState({ date: event.target.value })
+        console.log(this.state.date)
     }
 
     changeBio = (event) => {
@@ -85,6 +91,7 @@ class Todo extends Component {
                 isEdit={this.state.isEdit}
                 handleClick={this.handleClick}
                 changeBio={this.changeBio}
+                changeDate={this.changeDate}
                 changeTitle={this.changeTitle}
                 data={this.state.data}
                 deleteTodo={this.deleteTodo}

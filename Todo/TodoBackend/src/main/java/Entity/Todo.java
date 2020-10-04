@@ -25,12 +25,12 @@ public class Todo implements Serializable {
     private Long id;
     private String task;
     private String bio;
-    private Date date;
+    private String date;
 
     public Todo(){}
     
     
-    public Todo(String task, String bio, Date date) {
+    public Todo(String task, String bio, String date) {
         this.id = id;
         this.task = task;
         this.bio = bio;
@@ -53,7 +53,7 @@ public class Todo implements Serializable {
         this.bio = bio;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 

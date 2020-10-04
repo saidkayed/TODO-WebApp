@@ -12,11 +12,13 @@ export const getTODO = () => {
         })
 }
 
-export const postTODO = (title, bio) => {
+export const postTODO = (title, bio, date) => {
 
     return axios.post('http://localhost:8080/TodoBackend/api/create', {
         task: title,
-        bio, bio,
+        bio: bio,
+        date: date
+        
     })
         .then((res) => {
             // console.log(res.data)
@@ -39,11 +41,12 @@ export const deleteTODO = (id) => {
         })
 }
 
-export const editTODO = (id, title, bio) => {
+export const editTODO = (id, title, bio, date) => {
 
     return axios.put("http://localhost:8080/TodoBackend/api/edit/" + id, {
         task: title,
-        bio, bio,
+        bio: bio,
+        date: date
     })
         .then((res) => {
             // console.log(res.data)

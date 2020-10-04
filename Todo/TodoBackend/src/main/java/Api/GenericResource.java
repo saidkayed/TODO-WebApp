@@ -9,6 +9,7 @@ import Dao.TodoFacade;
 import Dao.exceptions.NonexistentEntityException;
 import Entity.Todo;
 import com.google.gson.Gson;
+import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.Persistence;
@@ -89,6 +90,8 @@ public class GenericResource {
     public Response postJson(String json) {
         Todo t = gson.fromJson(json, Todo.class);
        
+      
+
         tf.create(t);
 
         return Response.ok(json).build();
